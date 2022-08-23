@@ -1,0 +1,11 @@
+Model Information:
+* title:	Leica camera M6
+* source:	https://sketchfab.com/3d-models/leica-camera-m6-8bba2917f2634e91ab04b92ff20baa4b
+* author:	Kenkento3D (https://sketchfab.com/kenkento.zapater)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Leica camera M6" (https://sketchfab.com/3d-models/leica-camera-m6-8bba2917f2634e91ab04b92ff20baa4b) by Kenkento3D (https://sketchfab.com/kenkento.zapater) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

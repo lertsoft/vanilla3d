@@ -1,0 +1,11 @@
+Model Information:
+* title:	Super 8 Camera (Canon 310XL)
+* source:	https://sketchfab.com/3d-models/super-8-camera-canon-310xl-7218feba753b4b4bbdac135af36ac4a3
+* author:	meesjevanhout (https://sketchfab.com/meesjevanhout)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Super 8 Camera (Canon 310XL)" (https://sketchfab.com/3d-models/super-8-camera-canon-310xl-7218feba753b4b4bbdac135af36ac4a3) by meesjevanhout (https://sketchfab.com/meesjevanhout) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
