@@ -7,15 +7,16 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 // Every Three JS project need these three instances
 const scene = new THREE.Scene(); // A Scene to be render
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000); // A Camera perspective that the user / client will see from.
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 100, 1000); // A Camera perspective that the user / client will see from.
 const renderer = new THREE.WebGLRenderer({
-  canvas: document.querySelector('#bg'),
+  canvas: document.querySelector('#canvas'),
+  antialias: true,
 }); // A renderer to render and show the scene, with the textures and shapes.
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 // Camera position could be either set to X, Y, or Z.
-camera.position.setZ(30); // how close will the camera be to the rendered object.
+camera.position.setZ(115); // how close will the camera be to the rendered object.
 camera.position.setX(-3); 
 
 renderer.render(scene, camera); // Rendering what we have.
@@ -43,9 +44,9 @@ scene.add(pointLight, ambientLight);
 // Helpers
 // Helper functions to see and determnined where the pointlight is coming from, and to see the grid of our canvas.
 
-const lightHelper = new THREE.PointLightHelper(pointLight);
-const gridHelper = new THREE.GridHelper(200, 50);
-scene.add(lightHelper, gridHelper); // Adding the helpers to the scene
+// const lightHelper = new THREE.PointLightHelper(pointLight);
+const gridHelper = new THREE.GridHelper(200, 100);
+scene.add( gridHelper); // Adding the helpers to the scene
 
 const controls = new OrbitControls(camera, renderer.domElement); // Giving control to the user to move the camera
 
@@ -58,7 +59,7 @@ const loader = new GLTFLoader(); // Initiating the GLTF loader
 // loader.setDRACOLoader( dracoLoader );
 
 // Loading 3D rendered objects.
-loader.load( 'model/scene.gltf', function ( gltf ) {
+loader.load( 'model/earth/scene.gltf', function ( gltf ) {
 
 	scene.add( gltf.scene );
 
