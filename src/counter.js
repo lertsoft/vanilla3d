@@ -17,25 +17,25 @@ const mouse = new THREE.Vector2(); // This
 // Array of models to be rendered
 const models = [
   {
-    gltf: "model/camara/scene.gltf",
+    gltf: "static/model/camara/scene.gltf",
     link: "https://gallery.ronnycoste.com",
     position: [1, 0.12, 0],
     scale: 0.2,
   },
   {
-    gltf: "model/laptop/scene.gltf",
+    gltf: "static/model/laptop/scene.gltf",
     link: "https://ronnycoste.com/projects",
     position: [-1, 0.3, 0],
     scale: 3,
   },
   {
-    gltf: "model/super8/scene.gltf",
+    gltf: "static/model/super8/scene.gltf",
     link: "https://gallery.ronnycoste.com/cinematography",
     position: [-3, 0.3, 0],
     scale: 4,
   },
   {
-    gltf: "model/typewriter/scene.gltf",
+    gltf: "static/model/typewriter/scene.gltf",
     link: "https://blog.ronnycoste.com",
     position: [3, 0.16, 0],
     scale: 30,
@@ -89,7 +89,7 @@ controls = new OrbitControls (camera, renderer.domElement);
 
 // Minimun and maximun distance that the user / client can go in or out
 controls.minDistance = 10;
-controls.maxDistance = 300;
+controls.maxDistance = 100;
 
 // Load models
 let loader = new GLTFLoader();

@@ -59,7 +59,7 @@ const loader = new GLTFLoader(); // Initiating the GLTF loader
 // loader.setDRACOLoader( dracoLoader );
 
 // Loading 3D rendered objects.
-loader.load( 'model/earth/scene.gltf', function ( gltf ) {
+loader.load( 'static/model/earth/scene.gltf', function ( gltf ) {
 
 	scene.add( gltf.scene );
 
