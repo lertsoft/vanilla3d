@@ -1,4 +1,4 @@
-## Learning Three JS
+# 🚀 Learning Three JS & Webpack
 
 [Demo The Project](https://vanilla3d.netlify.app)
 
@@ -10,13 +10,31 @@ Complexity now is out of the question and now i will start from 0 to hero.<br>
 
 if you would like to see more of my projects check <a href="https://ronnycoste.com/projects"> here </a>
 
+
 ### Run it Locally
+
+This project has been created using **webpack-cli**, you can now run
 ```
 git clone <this repo>
-cd vanilla3d
-npm install
-npm run dev
 ```
+
+```
+cd vanilla3d
+```
+
+```
+npm install
+npm run build
+```
+
+or
+
+```
+yarn install
+yarn build
+```
+
+to bundle your application
 
 ### License
 

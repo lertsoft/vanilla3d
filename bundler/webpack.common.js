@@ -4,7 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    entry: path.resolve(__dirname, './src/counter.js'),
+    entry: path.resolve(__dirname, '../src/counter.js'),
     output:
     {
         hashFunction: 'xxhash64',
@@ -15,7 +15,7 @@ module.exports = {
         devtool: 'source-map',
         plugins:[
             new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, '../index.html'),
+                template: path.resolve(__dirname, '../src/index.html'),
                 minify: true
             }),
             new CopyWebpackPlugin({
