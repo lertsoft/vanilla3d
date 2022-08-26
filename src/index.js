@@ -3,6 +3,25 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
+// Loading screen
+// const wait = (delay = 0) =>
+//   new Promise(resolve => setTimeout(resolve, delay));
+
+// const setVisible = (elementOrSelector, visible) => 
+//   (typeof elementOrSelector === 'string'
+//     ? document.querySelector(elementOrSelector)
+//     : elementOrSelector
+//   ).style.display = visible ? 'block' : 'none';
+
+// setVisible('.scene', false);
+// setVisible('#loading', true);
+
+// document.addEventListener('DOMContentLoaded', () =>
+//   wait(2000).then(() => {
+//     setVisible('.scene', true);
+//     setVisible('#loading', false);
+//   }));
+
 // Setup
 // variables for setup
 let container;
@@ -81,7 +100,11 @@ scene.add(directLight);
 
 
 // Renderer
-renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer = new THREE.WebGLRenderer({ 
+
+    antialias: true,
+    alpha: true 
+});
 renderer.setSize(container.clientWidth, container.clientHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
 container.appendChild(renderer.domElement);

@@ -1,5 +1,10 @@
 @import url("https://use.typekit.net/jmk3xov.css");
 
+/* Root page styling  */
+html, body {
+  margin: 0;
+}
+
 canvas {
   position: fixed;
   top: 0;
@@ -11,7 +16,6 @@ canvas {
   height: 100vh;
 }
 
-
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
   --spacing: 350px;
@@ -20,7 +24,6 @@ canvas {
   font-weight: 400;
   font-style: normal;
 }
-
 
 main {
   width: 100vw;
@@ -35,19 +38,12 @@ main {
   grid-template-columns: repeat(12, 1fr);
 }
 
+/* Styling for information and to make the site more interactive */
 h1, h2, h3, blockquote {
   font-family: elevon, sans-serif;
   font-weight: 700;
   font-style: normal;
 }
-
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-
 
   header {
     background: var(--dark-bg);
@@ -85,6 +81,7 @@ canvas {
     grid-column: 6 / 12;
   }
 
+  /* Footer */
   .footer{
     padding-top: 2rem;
     position: fixed;
@@ -114,4 +111,118 @@ canvas {
     text-align: center;
     color: var(--text-color-light);
     margin-top: var(--mb-3);
+}
+
+/* Loading screen loader */
+.spin-container {
+  margin: 0px 20px;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: relative;
+}
+
+
+.spinner-default {
+  @include spinner();
+}
+
+.spinner-red {
+  @include spinner(
+    $size: 12px,
+    $arm_width: 2px,
+    $arm_count: 3,
+    $color: #a83b2a,
+    $time: 1s,
+    $shimmer: false
+  )
+}
+
+@keyframes spin {
+  0% { 
+    /*  */
+    transform: 
+      translateX(-50%)
+      translateY(-50%)
+      rotate(-360deg)
+  }
+  100% { 
+    /* translating for centering */
+    transform:
+      translateX(-50%)
+      translateY(-50%)
+      rotate(0deg)
+    }
+}
+
+@keyframes shimmer {
+  0% { 
+    opacity: 0.1
+  }
+  50% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0.1
+  }
+}
+
+
+@keyframes fade-in {
+  0% { opacity: 1 }
+  0.5% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@mixin spinner(
+  $size: 12px,
+  $arm_width: 2px,
+  $arm_count: 14,
+  $color: #303030,
+  $time: 2s,
+  $shimmer: true) {
+  
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: 50%; left: 50%;
+  display: block;
+  transform-origin: 0% 0%;
+  
+  /* fade in no less than 1s */
+  @if $time > 1 {
+  animation:
+    spin $time linear infinite,
+    fade-in $time/4 ease-in-out;
+  } @else {
+    animation:
+    spin $time linear infinite,
+    fade-in $time ease-in-out;
+  }
+    
+  .arm {
+    height: $arm_width;
+    width: $size;
+    position: absolute;
+    background: $color;
+    border-radius: $arm_width / 2;
+    transform-origin: 0px 0px;
+    
+    /* add the shimmer */
+    @if $shimmer == true {
+      opacity: 0;
+      animation: shimmer $time/2 linear infinite;
+    }
+
+    @for $i from 1 through $arm_count {
+      $ratio: $i / $arm_count;
+
+      &:nth-child(#{$i}) {
+        animation-delay: -1*($ratio * ($time/2));
+        transform:
+          rotate((360*$ratio)+deg)
+          translate($size, 0px);
+      }
+    }
+  } 
 }
