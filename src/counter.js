@@ -30,7 +30,7 @@ const models = [
   },
   {
     gltf: "static/model/super8/scene.gltf",
-    link: "https://gallery.ronnycoste.com/cinematography",
+    link: "https://cinema.ronnycoste.com/",
     position: [-3, 0.3, 0],
     scale: 4,
   },
